@@ -5,7 +5,7 @@
  puppet 
 :hierarchy:
 #  - "%{::environment}/%{calling_class}"
-  - "%{::environment}/%{domain}/%{calling_class}"
+  - "%{domain}/%{calling_class}"
 #  - "%{env}/%{calling_class}"
 #  - "%{calling_class}"
 #  - "%{env}/%{location}/%{calling_module}"
@@ -28,4 +28,4 @@
 # - /var/lib/hiera on *nix
 # - %CommonAppData%\PuppetLabs\hiera\var on Windows
 # When specifying a datadir, make sure the directory exists.
-  :datadir: /etc/puppet/hiera
+  :datadir: /etc/puppet/hiera/hiera_%{environment}/hiera
