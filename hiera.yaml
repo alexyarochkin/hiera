@@ -1,0 +1,31 @@
+---
+:backends:
+  - yaml
+:logger:
+ puppet 
+:hierarchy:
+#  - "%{::environment}/%{calling_class}"
+  - "%{::environment}/%{domain}/%{calling_class}"
+#  - "%{env}/%{calling_class}"
+#  - "%{calling_class}"
+#  - "%{env}/%{location}/%{calling_module}"
+#  - "%{env}/%{calling_module}"
+#  - "%{calling_module}"
+#  - "%{::location}/%{::applicationtier}"
+#  - "%{::location}/common"
+#  - "tier/%{::applicationtier}"
+  - common
+#Origin
+#  - defaults
+#  - "%{clientcert}"
+#  - "%{environment}"
+#  - "%{appliacation_tier}"
+#  - global
+#END Origin
+
+:yaml:
+# datadir is empty here, so hiera uses its defaults:
+# - /var/lib/hiera on *nix
+# - %CommonAppData%\PuppetLabs\hiera\var on Windows
+# When specifying a datadir, make sure the directory exists.
+  :datadir: /etc/puppet/hieradata
